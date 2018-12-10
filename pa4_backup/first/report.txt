@@ -1,0 +1,8 @@
+I used an array of pointers to "head" nodes which are the first all first 
+elements of linked lists. Each "node" was a struct I called Line, each line 
+contained a valid bit, tag, next pointer and read counter (for LRU). 
+
+The prefetcher reduced the number of misses in most cases because IN GENERAL 
+the assumption that was made that the next available address would be requested 
+was a good assumption. However, if the program did NOT take into account spatial 
+locality then the prefetching would have been disastrous for the program's runtime. 
